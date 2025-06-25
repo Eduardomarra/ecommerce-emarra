@@ -25,26 +25,49 @@ INSERT INTO clientes (nome, email, telefone, cpf_cnpj, endereco) VALUES ('Tiago 
 INSERT INTO clientes (nome, email, telefone, cpf_cnpj, endereco) VALUES ('Larissa Gomes', 'larissa@gmail.com', '61988889990', '12345678910', 'Rua J, Brasília');
 
 -- Produtos
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Mouse Gamer', 'Mouse com LED RGB', 120.00, TRUE, 1, 1);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Teclado Mecânico', 'Teclado com switches azuis', 250.00, TRUE, 1, 2);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('SSD 480GB', 'SSD rápido SATA 3', 280.00, TRUE, 2, 2);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Placa Mãe Intel', 'Compatível com 10ª geração', 780.00, TRUE, 2, 3);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Notebook i5', '8GB RAM, 256GB SSD', 3200.00, TRUE, 3, 1);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Notebook i7', '16GB RAM, 512GB SSD', 4600.00, TRUE, 3, 1);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Monitor 24"', 'Full HD HDMI', 850.00, TRUE, 4, 3);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Monitor 27"', '2K resolução', 1450.00, TRUE, 4, 4);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Roteador AC1200', 'Dual Band 5Ghz', 230.00, TRUE, 5, 5);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Switch 8 portas', 'Gigabit Ethernet', 280.00, TRUE, 5, 5);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('HD Externo 1TB', 'USB 3.0', 320.00, TRUE, 2, 2);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Gabinete ATX', 'Com vidro temperado', 340.00, TRUE, 2, 1);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Fonte 600W', '80 Plus Bronze', 420.00, TRUE, 2, 2);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Memória RAM 8GB', 'DDR4 2666MHz', 250.00, TRUE, 2, 3);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Cabo HDMI 2m', 'Alta velocidade', 40.00, TRUE, 1, 4);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Cooler para CPU', '120mm silencioso', 120.00, TRUE, 2, 2);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Hub USB', '4 portas', 80.00, TRUE, 1, 5);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Webcam Full HD', '1080p com microfone', 220.00, TRUE, 1, 3);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Mousepad Gamer', 'Extra grande', 90.00, TRUE, 1, 4);
-INSERT INTO produtos (nome, descricao, preco, ativo, categoria_id, fornecedor_id) VALUES ('Adaptador Wi-Fi USB', 'Dual Band', 70.00, TRUE, 5, 5);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Mouse Gamer', 'Mouse com LED RGB', 120.00, TRUE, 1);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Teclado Mecânico', 'Teclado com switches azuis', 250.00, TRUE, 2);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('SSD 480GB', 'SSD rápido SATA 3', 280.00, TRUE, 2);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Placa Mãe Intel', 'Compatível com 10ª geração', 780.00, TRUE, 3);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Notebook i5', '8GB RAM, 256GB SSD', 3200.00, TRUE, 1);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Notebook i7', '16GB RAM, 512GB SSD', 4600.00, TRUE, 1);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Monitor 24"', 'Full HD HDMI', 850.00, TRUE, 3);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Monitor 27"', '2K resolução', 1450.00, TRUE, 4);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Roteador AC1200', 'Dual Band 5Ghz', 230.00, TRUE, 5);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Switch 8 portas', 'Gigabit Ethernet', 280.00, TRUE, 5);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('HD Externo 1TB', 'USB 3.0', 320.00, TRUE, 2);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Gabinete ATX', 'Com vidro temperado', 340.00, TRUE, 1);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Fonte 600W', '80 Plus Bronze', 420.00, TRUE, 2);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Memória RAM 8GB', 'DDR4 2666MHz', 250.00, TRUE, 3);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Cabo HDMI 2m', 'Alta velocidade', 40.00, TRUE, 4);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Cooler para CPU', '120mm silencioso', 120.00, TRUE, 2);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Hub USB', '4 portas', 80.00, TRUE, 5);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Webcam Full HD', '1080p com microfone', 220.00, TRUE, 3);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Mousepad Gamer', 'Extra grande', 90.00, TRUE, 4);
+INSERT INTO produtos (nome, descricao, preco, ativo, fornecedor_id) VALUES ('Adaptador Wi-Fi USB', 'Dual Band', 70.00, TRUE, 5);
+
+-- Produto_Categoria
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (1, 1);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (2, 1);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (3, 2);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (4, 2);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (5, 3);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (6, 3);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (7, 4);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (8, 4);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (9, 5);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (10, 5);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (11, 2);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (12, 2);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (13, 2);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (14, 2);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (15, 1);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (16, 2);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (17, 1);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (18, 1);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (19, 1);
+INSERT INTO produto_categoria (produto_id, categoria_id) VALUES (20, 5);
+
 
 -- Estoque
 INSERT INTO estoque (produto_id, quantidade, data_ultima_atualizacao) VALUES  (1, 50, '2025-06-01 10:00:00');
@@ -76,6 +99,7 @@ INSERT INTO forma_pagamento (nome) VALUES ('PIX');
 INSERT INTO forma_pagamento (nome) VALUES ('Transferência');
 INSERT INTO forma_pagamento (nome) VALUES ('Dinheiro');
 
+-- Pedidos
 INSERT INTO pedidos (cliente_id, data_pedido, status_pedido, pagamento_id) VALUES (1, '2025-06-01 09:00:00', 'PAGO', 1);
 INSERT INTO pedidos (cliente_id, data_pedido, status_pedido, pagamento_id) VALUES  (2, '2025-06-01 09:15:00', 'PAGO', 3);
 INSERT INTO pedidos (cliente_id, data_pedido, status_pedido, pagamento_id) VALUES  (3, '2025-06-01 09:30:00', 'PENDENTE_PAGAMENTO', 2);
@@ -87,7 +111,7 @@ INSERT INTO pedidos (cliente_id, data_pedido, status_pedido, pagamento_id) VALUE
 INSERT INTO pedidos (cliente_id, data_pedido, status_pedido, pagamento_id) VALUES  (9, '2025-06-01 11:00:00', 'PAGO', 1);
 INSERT INTO pedidos (cliente_id, data_pedido, status_pedido, pagamento_id) VALUES  (10, '2025-06-01 11:15:00', 'PAGO', 2);
 
-
+-- Usuários
 INSERT INTO usuarios (nome, email, senha, perfil) VALUES ('Admin', 'admin@loja.com', '123456', 'ADM');
 INSERT INTO usuarios (nome, email, senha, perfil) VALUES ('Vendedor 1', 'vend1@loja.com', 'abc123', 'USER');
 INSERT INTO usuarios (nome, email, senha, perfil) VALUES ('Vendedor 2', 'vend2@loja.com', 'abc123', 'USER');
