@@ -42,6 +42,8 @@ public class Pedido {
 	
 	@OneToMany(mappedBy = "pedido")
 	private List<PedidoItem> itens;
+	
+	public Pedido() {}
 
 	public Pedido(Long id, LocalDateTime dataPedido, StatusPedido statusPedido, Cliente cliente,
 			FormaPagamento formaPagamento, List<PedidoItem> itens) {

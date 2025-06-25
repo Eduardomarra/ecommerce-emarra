@@ -29,6 +29,8 @@ public class PedidoItem {
 	
 	@Column(name = "preco_unitario")
 	private Double precoUnitario;
+	
+	public PedidoItem() {}
 
 	public PedidoItem(Long id, Pedido pedido, Produto produto, Integer quantidade, Double precoUnitario) {
 		this.id = id;

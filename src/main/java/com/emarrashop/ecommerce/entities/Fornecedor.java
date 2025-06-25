@@ -25,6 +25,8 @@ public class Fornecedor {
 	@OneToMany(mappedBy = "fornecedor")
 	private List<Produto> produtos;
 
+	public Fornecedor() {}
+	
 	public Fornecedor(Long id, String nome, String email, String telefone, String cnpj, List<Produto> produtos) {
 		this.id = id;
 		this.nome = nome;

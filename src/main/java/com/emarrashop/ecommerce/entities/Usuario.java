@@ -27,6 +27,8 @@ public class Usuario {
 	@Column(nullable = false)
 	private PerfilUsuario perfil;
 	
+	public Usuario() {}
+	
 	public Usuario(Long id, String nome, String email, String senha, PerfilUsuario perfil) {
 		this.id = id;
 		this.nome = nome;

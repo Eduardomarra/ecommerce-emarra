@@ -28,6 +28,8 @@ public class Cliente {
 	
 	@OneToMany(mappedBy = "cliente")
 	private List<Pedido> pedidos;
+	
+	public Cliente() {}
 
 	public Cliente(Long id, String nome, String email, String telefone, String cpf_cnpj, String endereco,
 			List<Pedido> pedidos) {
