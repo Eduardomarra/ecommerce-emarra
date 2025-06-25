@@ -4,8 +4,11 @@ import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -14,14 +17,20 @@ import jakarta.persistence.Table;
 public class Estoque {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
 	@OneToOne
-	@JoinColumn(name = "produto_id")
+	@MapsId
+	@JoinColumn(name = "produto_id", unique = true)
 	private Produto produto;
 	
 	private Integer quantidade;
 	
 	@Column(name = "data_ultima_atualizacao")
 	private LocalDateTime dataUltimaAtualizacao;
+	
+	public Estoque() {}
 
 	public Estoque(Produto produto, Integer quantidade, LocalDateTime dataUltimaAtualizacao) {
 		this.produto = produto;

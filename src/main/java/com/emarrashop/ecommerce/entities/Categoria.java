@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -19,13 +20,14 @@ public class Categoria {
 	
 	private String nome;
 	
-	@OneToMany(mappedBy = "categoria")
+	@ManyToMany(mappedBy = "categoria")
 	private List<Produto> produtos;
 
-	public Categoria(Long id, String nome, List<Produto> produtos) {
+	public Categoria() {}
+	
+	public Categoria(Long id, String nome) {
 		this.id = id;
 		this.nome = nome;
-		this.produtos = produtos;
 	}
 
 	public Long getId() {

@@ -1,11 +1,19 @@
 package com.emarrashop.ecommerce.entities;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -23,25 +31,28 @@ public class Produto {
 	private Double preco;
 	private Boolean ativo;
 	
-	@ManyToOne
-	@JoinColumn(name = "categoria_id")
-	private Categoria categoria;
+	@ManyToMany
+	@JoinTable(name = "produto_categoria",
+			joinColumns = @JoinColumn(name = "produto_id"),
+			inverseJoinColumns = @JoinColumn(name = "categoria_id"))
+	private List<Categoria> categoria = new ArrayList<>();
 	
 	@ManyToOne
 	@JoinColumn(name = "fornecedor_id")
 	private Fornecedor fornecedor;
-	
-	@OneToOne(mappedBy = "produto", cascade = CascadeType.ALL)
-	private Estoque estoque;
 
-	public Produto(Long id, String nome, String descricao, Double preco, Boolean ativo, Categoria categoria,
+	@OneToOne(mappedBy = "produto", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = true)
+	private Estoque estoque;
+	
+	public Produto() {}
+
+	public Produto(Long id, String nome, String descricao, Double preco, Boolean ativo,
 			Fornecedor fornecedor, Estoque estoque) {
 		this.id = id;
 		this.nome = nome;
 		this.descricao = descricao;
 		this.preco = preco;
 		this.ativo = ativo;
-		this.categoria = categoria;
 		this.fornecedor = fornecedor;
 		this.estoque = estoque;
 	}
@@ -86,11 +97,11 @@ public class Produto {
 		this.ativo = ativo;
 	}
 
-	public Categoria getCategoria() {
+	public List<Categoria> getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(Categoria categoria) {
+	public void setCategoria(List<Categoria> categoria) {
 		this.categoria = categoria;
 	}
 
