@@ -36,7 +36,7 @@ public class ProdutoService {
 	@Transactional
 	public ProdutoDTO inserirProduto(ProdutoDTO dto) {
 		Produto produto = new Produto();
-		produtoBuilder.copiarProdutosParaEntidade(dto, produto);
+		produtoBuilder.build(dto, produto);
 		produtoRepository.save(produto);
 		return new ProdutoDTO(produto);
 	}
@@ -45,7 +45,7 @@ public class ProdutoService {
 	public ProdutoDTO atualizarProduto(Long id, ProdutoDTO dto) {
 		try {
 			Produto produto = produtoRepository.getReferenceById(id);
-			produtoBuilder.copiarProdutosParaEntidade(dto, produto);
+			produtoBuilder.build(dto, produto);
 			produto = produtoRepository.save(produto);
 			return new ProdutoDTO(produto);
 		}

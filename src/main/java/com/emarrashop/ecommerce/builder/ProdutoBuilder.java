@@ -24,7 +24,7 @@ public class ProdutoBuilder {
 	@Autowired FornecedorRepository fornecedorRepository;
 	@Autowired EstoqueRepository estoqueRepository;
 	
-	public void copiarProdutosParaEntidade(ProdutoDTO dto, Produto produto) {
+	public void build(ProdutoDTO dto, Produto produto) {
 		produto.setNome(dto.getNome());
 		produto.setDescricao(dto.getDescricao());
 		produto.setPreco(dto.getPreco());
