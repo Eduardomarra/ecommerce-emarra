@@ -15,7 +15,7 @@ public class ProdutoDTO {
 	private String descricao;
 	private Double preco;
 	private boolean ativo;
-	private List<String> categoria = new ArrayList<>();
+	private List<CategoriaDTO> categorias = new ArrayList<>();
 	private String fornecedor;
 	private Integer quantidadeEstoque;
 
@@ -38,13 +38,9 @@ public class ProdutoDTO {
 		fornecedor = produto.getFornecedor() != null ? produto.getFornecedor().getNome() : null;
 		quantidadeEstoque = produto.getEstoque() != null ? produto.getEstoque().getQuantidade() : 0;
 
-		if(produto.getCategoria() != null) {
-			for(Categoria cat : produto.getCategoria()) {
-				this.categoria.add(cat.getNome());
-			}
+		for(Categoria cat : produto.getCategoria()) {
+			categorias.add(new CategoriaDTO(cat));
 		}
-
-
 	}
 	
 	public Long getId() {
@@ -67,8 +63,8 @@ public class ProdutoDTO {
 		return ativo;
 	}
 
-	public List<String> getCategoria() {
-		return categoria;
+	public List<CategoriaDTO> getCategoria() {
+		return categorias;
 	}
 
 	public String getFornecedor() {

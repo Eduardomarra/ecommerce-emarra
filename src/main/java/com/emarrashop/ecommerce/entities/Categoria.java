@@ -20,7 +20,7 @@ public class Categoria {
 	
 	private String nome;
 	
-	@ManyToMany(mappedBy = "categoria")
+	@ManyToMany(mappedBy = "categorias")
 	private List<Produto> produtos;
 
 	public Categoria() {}
@@ -29,6 +29,8 @@ public class Categoria {
 		this.id = id;
 		this.nome = nome;
 	}
+
+	public Categoria(Categoria cat) {}
 
 	public Long getId() {
 		return id;

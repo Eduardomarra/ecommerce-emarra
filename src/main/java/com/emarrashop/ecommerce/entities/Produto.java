@@ -35,7 +35,7 @@ public class Produto {
 	@JoinTable(name = "produto_categoria",
 			joinColumns = @JoinColumn(name = "produto_id"),
 			inverseJoinColumns = @JoinColumn(name = "categoria_id"))
-	private List<Categoria> categoria = new ArrayList<>();
+	private Set<Categoria> categorias = new HashSet<>();
 	
 	@ManyToOne
 	@JoinColumn(name = "fornecedor_id")
@@ -97,12 +97,12 @@ public class Produto {
 		this.ativo = ativo;
 	}
 
-	public List<Categoria> getCategoria() {
-		return categoria;
+	public Set<Categoria> getCategoria() {
+		return categorias;
 	}
 
-	public void setCategoria(List<Categoria> categoria) {
-		this.categoria = categoria;
+	public void setCategoria(Set<Categoria> categorias) {
+		this.categorias = categorias;
 	}
 
 	public Fornecedor getFornecedor() {

@@ -8,5 +8,4 @@ import com.emarrashop.ecommerce.entities.Categoria;
 
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
-	List<Categoria> findByNomeIn(List<String> nomes);
 }

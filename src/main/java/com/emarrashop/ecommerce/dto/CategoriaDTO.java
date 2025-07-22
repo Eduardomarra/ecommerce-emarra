@@ -1,29 +1,31 @@
 package com.emarrashop.ecommerce.dto;
 
+import com.emarrashop.ecommerce.entities.Categoria;
+
 public class CategoriaDTO {
 
 	private Long id;
-	private String name;
+	private String nome;
 
 	public CategoriaDTO() {
 	}
 
 	public CategoriaDTO(Long id, String name) {
 		this.id = id;
-		this.name = name;
+		this.nome = name;
 	}
 
-	public CategoriaDTO(CategoriaDTO categoria) {
+	public CategoriaDTO(Categoria categoria) {
 		this.id = categoria.getId();
-		this.name = categoria.getName();
+		this.nome = categoria.getNome();
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
 }

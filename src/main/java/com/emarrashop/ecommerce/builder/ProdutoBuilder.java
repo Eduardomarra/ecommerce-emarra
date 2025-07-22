@@ -2,10 +2,12 @@ package com.emarrashop.ecommerce.builder;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.emarrashop.ecommerce.dto.CategoriaDTO;
 import com.emarrashop.ecommerce.dto.ProdutoDTO;
 import com.emarrashop.ecommerce.entities.Categoria;
 import com.emarrashop.ecommerce.entities.Estoque;
@@ -28,9 +30,12 @@ public class ProdutoBuilder {
 		produto.setPreco(dto.getPreco());
 		produto.setAtivo(dto.getAtivo());
 
-		if (dto.getCategoria() != null && !dto.getCategoria().isEmpty()) {
-			List<Categoria> categorias = categoriaRepository.findByNomeIn(dto.getCategoria());
-			produto.setCategoria(categorias);
+		produto.getCategoria().clear();
+		for(CategoriaDTO catDTO: dto.getCategoria()) {
+			Categoria cat = new Categoria();
+			cat.setId(catDTO.getId());
+			cat.setNome(catDTO.getNome());
+			produto.getCategoria().add(cat);
 		}
 
 		if (dto.getFornecedor() != null) {
