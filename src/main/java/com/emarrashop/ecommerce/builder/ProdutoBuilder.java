@@ -20,10 +20,8 @@ import com.emarrashop.ecommerce.repositories.FornecedorRepository;
 @Component
 public class ProdutoBuilder {
 
-	@Autowired CategoriaRepository categoriaRepository;
 	@Autowired FornecedorRepository fornecedorRepository;
-	@Autowired EstoqueRepository estoqueRepository;
-	
+
 	public void build(ProdutoDTO dto, Produto produto) {
 		produto.setNome(dto.getNome());
 		produto.setDescricao(dto.getDescricao());
