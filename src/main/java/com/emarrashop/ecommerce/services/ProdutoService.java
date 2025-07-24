@@ -32,6 +32,18 @@ public class ProdutoService {
 		Produto produto = produtoRepository.findById(id).orElseThrow();
 		return new ProdutoDTO(produto);
 	}
+
+	@Transactional(readOnly = true)
+	public List<ProdutoDTO> buscarAtivos() {
+		List<Produto> ativos = produtoRepository.buscarAtivos();
+		return ativos.stream().map(ProdutoDTO::new).toList();
+	}
+
+	@Transactional(readOnly = true)
+	public List<ProdutoDTO> buscarInativos() {
+		List<Produto> inativos = produtoRepository.buscarInativos();
+		return inativos.stream().map(ProdutoDTO::new).toList();
+	}
 	
 	@Transactional
 	public ProdutoDTO inserirProduto(ProdutoDTO dto) {

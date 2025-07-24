@@ -34,6 +34,18 @@ public class ProdutoController {
 		return ResponseEntity.ok(produto);
 	}
 
+	@GetMapping(value = "/ativos")
+	public ResponseEntity<List<ProdutoDTO>> buscarAtivos() {
+		List<ProdutoDTO> ativos = produtoService.buscarAtivos();
+		return ResponseEntity.ok(ativos);
+	}
+
+	@GetMapping(value = "/inativos")
+	public ResponseEntity<List<ProdutoDTO>> buscarInativos() {
+		List<ProdutoDTO> inativos = produtoService.buscarInativos();
+		return ResponseEntity.ok(inativos);
+	}
+
 	@PostMapping(value = "/inserirproduto")
 	public ResponseEntity<ProdutoDTO> inserirProduto(@RequestBody ProdutoDTO dto) {
 		ProdutoDTO produto = produtoService.inserirProduto(dto);
