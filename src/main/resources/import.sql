@@ -6,11 +6,11 @@ INSERT INTO categorias (nome) VALUES ('Monitores');
 INSERT INTO categorias (nome) VALUES ('Redes');
 
 -- Fornecedores
-INSERT INTO fornecedores (nome, cnpj, email, telefone) VALUES ('InfoTech Ltda', '12345678000100', 'contato@infotech.com', '(11) 3123-4567');
-INSERT INTO fornecedores (nome, cnpj, email, telefone) VALUES ('Hardware BR', '22345678000100', 'suporte@hardwarebr.com', '(21) 99876-4321');
-INSERT INTO fornecedores (nome, cnpj, email, telefone) VALUES ('Digital Center', '32345678000100', 'digital@center.com', '(31) 4002-8922');
-INSERT INTO fornecedores (nome, cnpj, email, telefone) VALUES ('RedeMais', '42345678000100', 'vendas@redemais.com', '(41) 3232-2020');
-INSERT INTO fornecedores (nome, cnpj, email, telefone) VALUES ('AlphaBits', '52345678000100', 'contato@alphabits.com', '(51) 98765-1234');
+INSERT INTO fornecedores (nome, cnpj, email, telefone, ativo) VALUES ('InfoTech Ltda', '12345678000100', 'contato@infotech.com', '(11) 3123-4567', true);
+INSERT INTO fornecedores (nome, cnpj, email, telefone, ativo) VALUES ('Hardware BR', '22345678000100', 'suporte@hardwarebr.com', '(21) 99876-4321', true);
+INSERT INTO fornecedores (nome, cnpj, email, telefone, ativo) VALUES ('Digital Center', '32345678000100', 'digital@center.com', '(31) 4002-8922', true);
+INSERT INTO fornecedores (nome, cnpj, email, telefone, ativo) VALUES ('RedeMais', '42345678000100', 'vendas@redemais.com', '(41) 3232-2020', true);
+INSERT INTO fornecedores (nome, cnpj, email, telefone, ativo) VALUES ('AlphaBits', '52345678000100', 'contato@alphabits.com', '(51) 98765-1234', true);
 
 -- Clientes
 INSERT INTO clientes (nome, email, telefone, cpf_cnpj, endereco) VALUES ('João Silva', 'joao@gmail.com', '61988889999', '12345678901', 'Rua A, Brasília');

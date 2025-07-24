@@ -13,5 +13,6 @@ public class FornecedorBuilder {
 		fornecedor.setEmail(dto.getEmail());
 		fornecedor.setTelefone(dto.getTelefone());
 		fornecedor.setCnpj(dto.getCnpj());
+		fornecedor.setAtivo(dto.getAtivo());
 	}
 }

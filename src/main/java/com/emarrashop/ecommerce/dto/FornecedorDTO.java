@@ -1,11 +1,6 @@
 package com.emarrashop.ecommerce.dto;
 
-import java.util.List;
-
 import com.emarrashop.ecommerce.entities.Fornecedor;
-import com.emarrashop.ecommerce.entities.Produto;
-
-import jakarta.persistence.OneToMany;
 
 public class FornecedorDTO {
 
@@ -14,6 +9,7 @@ public class FornecedorDTO {
 	private String email;
 	private String telefone;
 	private String cnpj;
+	private Boolean ativo = true;
 
 	public FornecedorDTO() {}
 
@@ -23,14 +19,16 @@ public class FornecedorDTO {
 		this.email = fornecedor.getEmail();
 		this.telefone = fornecedor.getTelefone();
 		this.cnpj = fornecedor.getCnpj();
+		this.ativo = fornecedor.getAtivo();
 	}
 
-	public FornecedorDTO(Long id, String nome, String email, String telefone, String cnpj) {
+	public FornecedorDTO(Long id, String nome, String email, String telefone, String cnpj, Boolean ativo) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
 		this.cnpj = cnpj;
+		this.ativo = ativo;
 	}
 
 	public Long getId() {
@@ -51,5 +49,9 @@ public class FornecedorDTO {
 
 	public String getCnpj() {
 		return cnpj;
+	}
+
+	public Boolean getAtivo() {
+		return ativo;
 	}
 }

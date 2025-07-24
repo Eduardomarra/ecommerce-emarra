@@ -21,7 +21,8 @@ public class Fornecedor {
 	private String email;
 	private String telefone;
 	private String cnpj;
-	
+	private Boolean ativo = true;
+
 	@OneToMany(mappedBy = "fornecedor")
 	private List<Produto> produtos;
 
@@ -74,6 +75,14 @@ public class Fornecedor {
 
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
+	}
+
+	public Boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
 	}
 
 	public List<Produto> getProdutos() {
