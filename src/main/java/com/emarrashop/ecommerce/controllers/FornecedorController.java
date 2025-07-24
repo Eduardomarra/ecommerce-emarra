@@ -35,6 +35,18 @@ public class FornecedorController {
 		return ResponseEntity.ok(dto);
 	}
 
+	@GetMapping(value = "/ativos")
+	public ResponseEntity<List<FornecedorDTO>> buscarAtivos() {
+		List<FornecedorDTO> ativos = fornecedorService.buscarAtivos();
+		return ResponseEntity.ok(ativos);
+	}
+
+	@GetMapping(value = "/inativos")
+	public ResponseEntity<List<FornecedorDTO>> buscarInativos() {
+		List<FornecedorDTO> inativos = fornecedorService.buscarInativos();
+		return ResponseEntity.ok(inativos);
+	}
+
 	@PostMapping(value = "/inserir")
 	public ResponseEntity<FornecedorDTO> inserirFornecedor(@RequestBody FornecedorDTO dto) {
 		FornecedorDTO fornecedor = fornecedorService.inserirFornecedor(dto);

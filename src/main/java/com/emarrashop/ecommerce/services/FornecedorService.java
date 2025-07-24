@@ -32,6 +32,19 @@ public class FornecedorService {
 		return new FornecedorDTO(fornecedor);
 	}
 
+	@Transactional(readOnly = true)
+	public List<FornecedorDTO> buscarAtivos() {
+		List<Fornecedor> ativos = fornecedorRepository.buscarAtivos();
+		return ativos.stream().map(FornecedorDTO::new).toList();
+	}
+
+	@Transactional(readOnly = true)
+	public List<FornecedorDTO> buscarInativos() {
+		List<Fornecedor> inativos = fornecedorRepository.buscarInativos();
+		return inativos.stream().map(FornecedorDTO::new).toList();
+	}
+
+
 	@Transactional
 	public FornecedorDTO inserirFornecedor(FornecedorDTO dto) {
 		Fornecedor fornecedor = new Fornecedor();
